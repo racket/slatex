@@ -1,12 +1,21 @@
 
 (module slatex-wrapper scheme/base
   (require mzlib/file
+           scheme/contract
 	   mzlib/process
 	   mzlib/sendevent
+           scheme/runtime-path
            "slatex.ss")
+  
+  (define-runtime-path here ".")
 
-  (provide slatex latex pdf-slatex pdf-latex slatex/no-latex
-           filename->latex-filename)
+  (provide/contract
+   [slatex (string? . -> . boolean?)]
+   [pdf-slatex (string? . -> . boolean?)]
+   [slatex/no-latex (string? . -> . void?)]
+   [latex (string? . -> . boolean?)]
+   [pdf-latex (string? . -> . boolean?)]
+   [filename->latex-filename (string? . -> . string?)])
   
   (define (add-suffix p s)
     (path->string
@@ -84,6 +93,10 @@
               (lambda (latex-fun)
                 (lambda (filename)
                   (slatex/no-latex filename)
+                  (putenv "TEXINPUTS" 
+                          (format "~a:~a" 
+                                  (path->string here)
+                                  (or (getenv "TEXINPUTS") "")))
                   (latex-fun filename)))])
       (values 
        (meta-slatex latex)
