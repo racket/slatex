@@ -1,5 +1,7 @@
 #lang setup/infotab
 
+(define single-collection "slatex")
+
 (define scribblings '(("slatex-wrap.scrbl" () (tool-library))))
 
 ;; (define tools (list (list "slatex-lang.rkt")))
