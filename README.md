@@ -1,3 +1,23 @@
+# slatex
+
+This the source for the Racket package: "slatex".
+
+### Contributing
+
+Contribute to Racket by submitting a [pull request], reporting an
+[issue], joining the [development mailing list], or visiting the
+IRC or Slack channels.
+
+### License
+
+Racket, including these packages, is free software, see [LICENSE]
+for more details.
+
+By making a contribution, you are agreeing that your contribution
+is licensed under the [Apache 2.0] license.
+
+### Instructions for rebuilding (note: out of date)
+
 This collection contains Dorai Sitaram's slatex.  Unlike prior versions of this 
 collection, it contains only the 'translated' --- that is, the mzscheme-specific
 --- version of slatex.  This means that an update to slatex can only be incorporated
@@ -20,3 +40,9 @@ directory.
 
 5) check it in.
 
+
+[Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0.txt
+[pull request]: https://github.com/racket/slatex/pulls
+[issue]: https://github.com/racket/slatex/issues
+[development mailing list]: https://lists.racket-lang.org
+[LICENSE]: LICENSE
