@@ -25,3 +25,6 @@
 (define pkg-desc "SLaTeX (Scheme in LaTeX)")
 
 (define pkg-authors '(sstrickl))
+
+(define license
+  'Apache-2.0)
